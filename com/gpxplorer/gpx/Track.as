@@ -17,8 +17,9 @@ package com.gpxplorer.gpx
 		// type
 		// extensions
 		
-		private var _segments:Array;
-		public function get segments():Array
+		private var _segments:Vector.<TrackSegment>;
+
+		public function get segments():Vector.<TrackSegment>
 		{
 			return _segments.concat();
 		}
@@ -27,7 +28,7 @@ package com.gpxplorer.gpx
 		{
 			var ns:Namespace = x.namespace();
 			
-			_segments = [];
+			_segments = new Vector.<TrackSegment>();
 			var segmentXML:XML;
 			for each (segmentXML in x.ns::trkseg) {
 				_segments.push(new TrackSegment(segmentXML));

@@ -7,8 +7,9 @@ package com.gpxplorer.gpx
 	public class TrackSegment 
 	{
 		
-		private var _trackPoints:Array;
-		public function get trackPoints():Array
+		private var _trackPoints:Vector.<Waypoint>;
+
+		public function get trackPoints():Vector.<Waypoint>
 		{
 			return _trackPoints.concat();
 		}
@@ -111,7 +112,7 @@ package com.gpxplorer.gpx
 			return _trackPoints[_trackPoints.length-1];
 		}
 
-		public function TrackSegment(x:XML=null, trackPoints:Array=null)
+		public function TrackSegment(x:XML=null, trackPoints:Vector.<Waypoint> = null)
 		{
 			if (x) {
 				init(x);
@@ -122,7 +123,7 @@ package com.gpxplorer.gpx
 		
 		private function init(x:XML):void
 		{
-			_trackPoints = [];
+			_trackPoints = new Vector.<Waypoint>();
 			
 			//var lastWaypoint:Waypoint;
 

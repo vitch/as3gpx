@@ -43,8 +43,9 @@ package com.gpxplorer.gpx
 			return _routes.concat();
 		}
 		
-		private var _tracks:Array;
-		public function get tracks():Array
+		private var _tracks:Vector.<Track>;
+
+		public function get tracks():Vector.<Track>
 		{
 			return _tracks.concat();
 		}
@@ -60,7 +61,7 @@ package com.gpxplorer.gpx
 			
 			_waypoints = [];
 			_routes = [];
-			_tracks = [];
+			_tracks = new Vector.<Track>();
 			
 			var trackXML:XML;
 			
